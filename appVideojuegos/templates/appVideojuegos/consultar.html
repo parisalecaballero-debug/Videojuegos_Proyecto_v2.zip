@@ -1,0 +1,88 @@
+{% extends 'appVideojuegos/base.html' %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+    <h2 class="mb-0">🎮 Catálogo de Videojuegos</h2>
+    <a href="{% url 'registrar' %}" class="btn btn-success">+ Agregar videojuego</a>
+</div>
+
+<div class="mb-4">
+    <input type="text" id="buscador" class="form-control form-control-lg" placeholder="🔍 Buscar por título, género o plataforma...">
+</div>
+
+<div class="row g-4" id="contenedor-juegos">
+    {% for juego in juegos %}
+    <div class="col-12 col-sm-6 col-lg-4 tarjeta-juego"
+         data-titulo="{{ juego.titulo|lower }}"
+         data-genero="{{ juego.genero|lower }}"
+         data-plataforma="{{ juego.plataforma|lower }}">
+        <div class="h-100 p-3" style="background: white; border-radius: 25px; box-shadow: 0 8px 20px rgba(177, 133, 219, 0.18); position: relative; overflow: hidden;">
+
+            <div style="border-radius: 18px; overflow: hidden; background: var(--rosa-suave); height: 180px; display: flex; align-items: center; justify-content: center;">
+                {% if juego.imagen %}
+                    <img src="/media/{{ juego.imagen }}" alt="{{ juego.titulo }}" style="width: 100%; height: 100%; object-fit: contain;">
+                {% else %}
+                    <span style="font-size: 3rem;">🕹️</span>
+                {% endif %}
+            </div>
+
+            <h3 class="mt-3 mb-1" style="font-size: 1.25rem;">{{ juego.titulo }}</h3>
+
+            <div class="mb-2">
+                <span class="badge rounded-pill mb-1" style="background: var(--lavanda-suave); color: var(--lavanda); font-weight: 600;">{{ juego.genero }}</span>
+                <span class="badge rounded-pill mb-1" style="background: var(--menta); color: #1f5e4a; font-weight: 600;">{{ juego.plataforma }}</span>
+            </div>
+
+            <p class="mb-1 small text-muted">{{ juego.desarrollador }} · {{ juego.anio }}</p>
+
+            <div class="mb-3" style="color: var(--amarillo); font-size: 1.1rem;">
+                {% for i in "1234567890" %}
+                    {% if forloop.counter <= juego.calificacion %}★{% else %}<span style="color: #eee;">★</span>{% endif %}
+                {% endfor %}
+                <span class="small text-muted">({{ juego.calificacion }}/10)</span>
+            </div>
+
+            <a href="{% url 'modificar' juego.id %}" class="btn btn-warning btn-sm w-100">Editar</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div id="sin-resultados" class="text-center text-muted py-5" style="display: none;">
+    <div style="font-size: 2.5rem;">🔍</div>
+    <p class="mt-2">No se encontraron videojuegos con esa búsqueda.</p>
+</div>
+
+<style>
+    .tarjeta-juego {
+        animation: aparecer 0.4s ease forwards;
+        opacity: 0;
+    }
+    @keyframes aparecer {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+<script>
+    const buscador = document.getElementById('buscador');
+    const tarjetas = document.querySelectorAll('.tarjeta-juego');
+    const sinResultados = document.getElementById('sin-resultados');
+
+    buscador.addEventListener('input', function () {
+        const texto = this.value.toLowerCase().trim();
+        let visibles = 0;
+
+        tarjetas.forEach(function (tarjeta) {
+            const titulo = tarjeta.dataset.titulo;
+            const genero = tarjeta.dataset.genero;
+            const plataforma = tarjeta.dataset.plataforma;
+            const coincide = titulo.includes(texto) || genero.includes(texto) || plataforma.includes(texto);
+
+            tarjeta.style.display = coincide ? '' : 'none';
+            if (coincide) visibles++;
+        });
+
+        sinResultados.style.display = visibles === 0 ? 'block' : 'none';
+    });
+</script>
+{% endblock %}

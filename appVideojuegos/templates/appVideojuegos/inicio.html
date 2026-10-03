@@ -1,0 +1,43 @@
+{% extends 'appVideojuegos/base.html' %}
+{% load static %}
+{% block content %}
+<div class="d-flex justify-content-center align-items-end position-relative" style="min-height: 560px; padding-top: 60px;">
+
+    <img src="{% static 'appVideojuegos/img/kaisa.png' %}" alt="Kai'Sa"
+         class="d-none d-xl-block position-absolute"
+         style="height: 460px; left: -9%; bottom: 20px; opacity: 1; z-index: 1;">
+
+    <div class="text-center p-5" style="max-width: 560px; background: white; border-radius: 40px; box-shadow: 0 10px 30px rgba(177, 133, 219, 0.25); position: relative; z-index: 2; margin-bottom: 20px;">
+        <div style="position: absolute; top: -18px; left: 30px; font-size: 1.5rem;">✨</div>
+        <div style="position: absolute; bottom: -14px; right: 40px; font-size: 1.8rem;">⭐</div>
+        <div style="font-size: 3rem;">🎮</div>
+        <h1 class="mt-2">Bitacora de Videojuegos</h1>
+        <p class="lead">Consulta, registra y administra tu colección de videojuegos favoritos.</p>
+        {% if not request.session.usuario %}
+            <a href="{% url 'login' %}" class="btn btn-primary btn-lg mt-2">Iniciar sesión</a>
+        {% else %}
+            <a href="{% url 'consultar' %}" class="btn btn-primary btn-lg mt-2">Ver catálogo</a>
+        {% endif %}
+    </div>
+
+    <img src="{% static 'appVideojuegos/img/reyna.png' %}" alt="Reyna"
+         class="d-none d-xl-block position-absolute"
+         style="height: 460px; right: 2%; bottom: 20px; opacity: 1; z-index: 1;">
+
+</div>
+
+<div class="d-flex justify-content-center gap-4 flex-wrap text-center mb-4">
+    <div>
+        <div style="font-size: 1.8rem;">🕹️</div>
+        <p class="small text-muted mb-0">Registra tus juegos</p>
+    </div>
+    <div>
+        <div style="font-size: 1.8rem;">⭐</div>
+        <p class="small text-muted mb-0">Califícalos</p>
+    </div>
+    <div>
+        <div style="font-size: 1.8rem;">📚</div>
+        <p class="small text-muted mb-0">Organiza tu colección</p>
+    </div>
+</div>
+{% endblock %}

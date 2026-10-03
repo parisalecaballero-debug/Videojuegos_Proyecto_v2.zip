@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "titulo": "The Legend of Zelda: Breath of the Wild",
+        "genero": "Aventura",
+        "plataforma": "Nintendo Switch",
+        "anio": 2017,
+        "desarrollador": "Nintendo",
+        "calificacion": 9,
+        "imagen": "videojuegos/cbe85660afe24db6b9e1a91ecaa4c4ea.jpg",
+        "progreso": 39
+    },
+    {
+        "id": 2,
+        "titulo": "God of War",
+        "genero": "Accion",
+        "plataforma": "PlayStation 4",
+        "anio": 2018,
+        "desarrollador": "Santa Monica Studio",
+        "calificacion": 9,
+        "imagen": "videojuegos/64dec9bde89b4093935639f1486e464d.jpg",
+        "progreso": 92
+    },
+    {
+        "id": 3,
+        "titulo": "Animal crossing , new horizons ",
+        "genero": "simulación vida virtual",
+        "plataforma": "nintendo switch",
+        "anio": 2020,
+        "desarrollador": "nintendo",
+        "calificacion": 10,
+        "imagen": "videojuegos/c936abb3748c4003808935c6e8901d4b.jpg",
+        "progreso": 31
+    },
+    {
+        "id": 4,
+        "titulo": "VALORANT ",
+        "genero": "FPS",
+        "plataforma": "PC (Windows), PlayStation 5 y Xbox Series X|S",
+        "anio": 2020,
+        "desarrollador": "riot games ",
+        "calificacion": 1,
+        "imagen": "videojuegos/9b41a854519444888cc7de34a1af95ca.jpg",
+        "progreso": 3
+    },
+    {
+        "id": 5,
+        "titulo": "Doki Doki Literature Club!",
+        "genero": "terror psicológico ",
+        "plataforma": "PC",
+        "anio": 2017,
+        "desarrollador": "Team Salvato",
+        "calificacion": 10,
+        "imagen": "videojuegos/ba8b629de8f642e7b2ba24f7323edbfd.jpg",
+        "progreso": 100
+    },
+    {
+        "id": 6,
+        "titulo": "Peach Princess Showtime!",
+        "genero": "Aventura",
+        "plataforma": "Nintendo Switch",
+        "anio": 2024,
+        "desarrollador": "good feel ",
+        "calificacion": 8,
+        "imagen": "videojuegos/f426b6a411a54c7fb6dbaf8cc1fdeed4.jpg",
+        "progreso": 59
+    },
+    {
+        "id": 7,
+        "titulo": " Kirby and the Forgotten Land",
+        "genero": "Aventura",
+        "plataforma": "Nintendo Switch",
+        "anio": 2022,
+        "desarrollador": "hal laboratory ",
+        "calificacion": 10,
+        "imagen": "videojuegos/387ae29c074b4be4a363aa53260870ee.jpg",
+        "progreso": 0
+    },
+    {
+        "id": 8,
+        "titulo": "Red Dead Redemption II",
+        "genero": "Sandbox",
+        "plataforma": "PS5",
+        "anio": 2019,
+        "desarrollador": "Rockstar Studios",
+        "calificacion": 10,
+        "imagen": "videojuegos/039401d8c4554f53b7ed9d62b693c23e.jpg",
+        "progreso": 35
+    }
+]

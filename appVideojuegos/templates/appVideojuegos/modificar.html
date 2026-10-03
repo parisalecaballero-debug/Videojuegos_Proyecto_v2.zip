@@ -1,0 +1,49 @@
+{% extends 'appVideojuegos/base.html' %}
+{% block content %}
+<div class="card shadow-sm mx-auto" style="max-width: 600px;">
+    <div class="card-body p-4">
+        <h2 class="card-title mb-4">Modificar Videojuego</h2>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            {% if juego.imagen %}
+            <div class="mb-3 text-center">
+                <img src="/media/{{ juego.imagen }}" alt="{{ juego.titulo }}" class="img-thumbnail" style="max-height: 200px;">
+            </div>
+            {% endif %}
+
+            <div class="mb-3">
+                <label class="form-label">Imagen {% if juego.imagen %}(dejar vacío para no cambiarla){% endif %}</label>
+                <input type="file" name="imagen" class="form-control" accept="image/*">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Título</label>
+                <input type="text" name="titulo" class="form-control" value="{{ juego.titulo }}" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Género</label>
+                <input type="text" name="genero" class="form-control" value="{{ juego.genero }}" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Plataforma</label>
+                <input type="text" name="plataforma" class="form-control" value="{{ juego.plataforma }}" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Año</label>
+                <input type="number" name="anio" class="form-control" value="{{ juego.anio }}" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Desarrollador</label>
+                <input type="text" name="desarrollador" class="form-control" value="{{ juego.desarrollador }}" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Calificación (1-10)</label>
+                <input type="number" name="calificacion" min="1" max="10" class="form-control" value="{{ juego.calificacion }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Guardar cambios</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

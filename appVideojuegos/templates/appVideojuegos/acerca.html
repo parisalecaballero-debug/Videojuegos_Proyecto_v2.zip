@@ -1,0 +1,29 @@
+{% extends 'appVideojuegos/base.html' %}
+{% block content %}
+<div class="d-flex justify-content-center py-4">
+    <div class="p-5" style="max-width: 700px; background: white; border-radius: 40px; box-shadow: 0 10px 30px rgba(177, 133, 219, 0.25); width: 100%;">
+        <h1 class="text-center mb-4">💜 Acerca de este proyecto</h1>
+
+        <p>
+            Este catálogo de videojuegos fue desarrollado como Proyecto Integrador de Aprendizaje (PIA)
+            para la materia de <strong>Fundamentos de Desarrollo Web</strong>. Aquí puedes consultar, registrar
+            y administrar tu colección de videojuegos favoritos, con imágenes, calificaciones y un buscador en vivo.
+        </p>
+
+        <h2 class="mt-4 mb-3" style="font-size: 1.4rem;">🛠️ Tecnologías utilizadas</h2>
+        <div class="d-flex flex-wrap gap-2 mb-4">
+            <span class="badge rounded-pill" style="background: var(--lavanda-suave); color: var(--lavanda); font-weight: 600; padding: 10px 16px;">Django</span>
+            <span class="badge rounded-pill" style="background: var(--rosa-suave); color: var(--rosa); font-weight: 600; padding: 10px 16px;">Python</span>
+            <span class="badge rounded-pill" style="background: var(--menta); color: #1f5e4a; font-weight: 600; padding: 10px 16px;">Bootstrap 5</span>
+            <span class="badge rounded-pill" style="background: #fff3cd; color: #856404; font-weight: 600; padding: 10px 16px;">JavaScript</span>
+        </div>
+
+        <h2 class="mt-4 mb-3" style="font-size: 1.4rem;">👩‍💻 Equipo</h2>
+        <ul class="list-unstyled">
+            <li class="mb-2">🎀 Daniela Meléndez</li>
+            <li class="mb-2">🎀 Ana Lucía</li>
+            <li class="mb-2">🎀 Paris Alejandra</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
